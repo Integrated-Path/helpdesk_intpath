@@ -3,15 +3,6 @@
 from odoo import models, fields, api
 from odoo.exceptions import UserError
 
-class HelpDeskTeam(models.Model):
-    _inherit = 'helpdesk.team'
-
-    @api.constrains('name')
-    def create_group(self):
-        self.env['mail.channel'].create({
-            'name': self.name,
-        })
-
 class HelpDeskTicket(models.Model):
     _inherit = 'helpdesk.ticket'
 
