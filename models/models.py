@@ -10,7 +10,7 @@ class HelpDeskTicket(models.Model):
     @api.model
     def create(self,vals):
         res = super(HelpDeskTicket,self).create(vals)
-        channel = self.env['mail.channel'].search([('name', '=', res.team_id.name)])
+        channel = self.env['mail.channel'].search([('name', '=', res.team_id.name)], limit=1)
 
         if not channel:
             channel = res.env['mail.channel'].create({
