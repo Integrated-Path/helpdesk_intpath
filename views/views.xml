@@ -1,60 +1,151 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="helpdesk_intpath.list">
-      <field name="name">helpdesk_intpath list</field>
-      <field name="model">helpdesk_intpath.helpdesk_intpath</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
--->
+    <template inherit_id="website_helpdesk_form.team_form_1" id="website_helpdesk_form_inherit" name="Inherit Helpdesk Ticket Form">
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="helpdesk_intpath.action_window">
-      <field name="name">helpdesk_intpath window</field>
-      <field name="res_model">helpdesk_intpath.helpdesk_intpath</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
 
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="helpdesk_intpath.action_server">
-      <field name="name">helpdesk_intpath server</field>
-      <field name="model_id" ref="model_helpdesk_intpath_helpdesk_intpath"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
+      <xpath expr="//div[hasclass('s_website_form_rows')]" position="replace">
 
-    <!-- Top menu item -->
-<!--
-    <menuitem name="helpdesk_intpath" id="helpdesk_intpath.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="helpdesk_intpath.menu_1" parent="helpdesk_intpath.menu_root"/>
-    <menuitem name="Menu 2" id="helpdesk_intpath.menu_2" parent="helpdesk_intpath.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="helpdesk_intpath.menu_1_list" parent="helpdesk_intpath.menu_1"
-              action="helpdesk_intpath.action_window"/>
-    <menuitem name="Server to list" id="helpdesk_intpath" parent="helpdesk_intpath.menu_2"
-              action="helpdesk_intpath.action_server"/>
--->
+      
+
+          <div class="form-group col-12 s_website_form_field s_website_form_model_required" data-name="Field">
+            <div class="row s_col_no_resize s_col_no_bgcolor">
+              <label class="col-form-label col-auto s_website_form_label" style="width: 200px" for="helpdesk2">
+                <span class="s_website_form_label_content">Company Name</span>
+                <span class="s_website_form_mark"> *</span>
+              </label>
+              <div class="col-sm col-xs-12">
+                <input id="helpdesk2" class='form-control s_website_form_input' name="partner_name" required="1"  />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group col-12 s_website_form_field s_website_form_model_required" data-name="Field">
+            <div class="row s_col_no_resize s_col_no_bgcolor">
+              <label class="col-form-label col-auto s_website_form_label" style="width: 200px" for="helpdesk2">
+                <span class="s_website_form_label_content">Company Email</span>
+                <span class="s_website_form_mark"> *</span>
+              </label>
+              <div class="col-sm col-xs-12">
+                <input id="helpdesk2" class='form-control s_website_form_input' name="partner_email" required="1" />
+              </div>
+            </div>
+          </div>
+          <div class="form-group col-12 s_website_form_field s_website_form_model_required" data-name="Field">
+            <div class="row s_col_no_resize s_col_no_bgcolor">
+              <label class="col-form-label col-auto s_website_form_label" style="width: 200px" for="helpdesk2">
+                <span class="s_website_form_label_content">Issue type</span>
+                <span class="s_website_form_mark"> *</span>
+              </label>
+              <div class="col-sm col-xs-12">
+                <input id="helpdesk2" class='form-control s_website_form_input' name="ticket_type_id" required="1"   />
+              </div>
+            </div>
+
+
+          </div>
+      
+        <div class="form-group col-12 s_website_form_field s_website_form_model_required" data-name="Field">
+          <div class="row s_col_no_resize s_col_no_bgcolor">
+            <label class="col-form-label col-auto s_website_form_label" style="width: 200px" for="helpdesk2">
+              <span class="s_website_form_label_content">Steps to reproduce the issue ?</span>
+              <span class="s_website_form_mark"> *</span>
+            </label>
+            <div class="col-sm col-xs-12">
+              <input id="helpdesk2" class='form-control s_website_form_input' name="steps_to_follow" required="1" placeholder="EX: 1-Home , 2-Invoices .. etc " />
+            </div>
+          </div>
+
+
+        </div>
+        <div class="form-group col-12 s_website_form_field s_website_form_model_required" data-name="Field">
+          <div class="row s_col_no_resize s_col_no_bgcolor">
+            <label class="col-form-label col-auto s_website_form_label" style="width: 200px" for="helpdesk2">
+              <span class="s_website_form_label_content">What is the expected behavior  ?</span>
+              <span class="s_website_form_mark"> *</span>
+            </label>
+            <div class="col-sm col-xs-12">
+              <input id="helpdesk2" class='form-control s_website_form_input' name="expected_behavior" required="1" />
+            </div>
+          </div>
+
+
+        </div>
+        <div class="form-group col-12 s_website_form_field s_website_form_model_required" data-name="Field">
+          <div class="row s_col_no_resize s_col_no_bgcolor">
+            <label class="col-form-label col-auto s_website_form_label" style="width: 200px" for="helpdesk2">
+              <span class="s_website_form_label_content">What is the current behavior  ? </span>
+              <span class="s_website_form_mark"> *</span>
+            </label>
+            <div class="col-sm col-xs-12">
+              <input id="helpdesk2" class='form-control s_website_form_input' name="current_behavior" required="1" />
+            </div>
+          </div>
+
+
+        </div>
+        <div class="form-group col-12 s_website_form_field s_website_form_model_required" data-name="Field">
+          <div class="row s_col_no_resize s_col_no_bgcolor">
+            <label class="col-form-label col-auto s_website_form_label" style="width: 200px" for="helpdesk2">
+              <span class="s_website_form_label_content">What is the name of the user(s) with this issue ? </span>
+              <span class="s_website_form_mark"> *</span>
+            </label>
+            <div class="col-sm col-xs-12">
+              <input id="helpdesk2" class='form-control s_website_form_input' name="users_names" required="1" />
+            </div>
+          </div>
+
+
+        </div>
+        <div class="form-group col-12 s_website_form_field s_website_form_model_required" data-name="Field">
+          <div class="row s_col_no_resize s_col_no_bgcolor">
+            <label class="col-form-label col-auto s_website_form_label" style="width: 200px" for="helpdesk2">
+              <span class="s_website_form_label_content">Related record number/name </span>
+              <span class="s_website_form_mark"> *</span>
+            </label>
+            <div class="col-sm col-xs-12">
+              <input id="helpdesk2" class='form-control s_website_form_input' name="related_record_name" required="1" />
+            </div>
+          </div>
+
+
+        </div>
+        <div class="form-group col-12 s_website_form_field s_website_form_model_required" data-name="Field">
+          <div class="row s_col_no_resize s_col_no_bgcolor">
+            <label class="col-form-label col-auto s_website_form_label" style="width: 200px" for="helpdesk2">
+              <span class="s_website_form_label_content">Error message </span>
+
+            </label>
+            <div class="col-sm col-xs-12">
+              <textarea id="helpdesk4" class="form-control s_website_form_input" name="error message"/>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="form-group col-12 s_website_form_field s_website_form_model_required">
+          <div class="row s_col_no_resize s_col_no_bgcolor">
+            <label class="col-form-label col-auto s_website_form_label" style="width: 200px" for="helpdesk2">
+              <span class="s_website_form_label_content">Any other info you may want to add  </span>
+
+            </label>
+            <div class="col-sm col-xs-12">
+              <textarea id="helpdesk4" class="form-control s_website_form_input" name="other info"/>
+            </div>
+          </div>
+
+
+        </div>
+
+        <div class="form-group col-12 s_website_form_submit" data-name="Submit Button">
+          <div style="width: 200px;" class="s_website_form_label" />
+          <a href="#" role="button" class="btn btn-primary btn-lg s_website_form_send">Submit</a>
+          <span id="s_website_form_result"></span>
+        </div>
+      </xpath>
+
+
+    </template>
+
+
   </data>
 </odoo>

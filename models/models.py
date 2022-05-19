@@ -6,7 +6,16 @@ from odoo.exceptions import UserError
 class HelpDeskTicket(models.Model):
     _inherit = 'helpdesk.ticket'
 
-
+    ticket_type_id = fields.Many2one('helpdesk.ticket.type', string='Ticket Type', required=True)
+    steps_to_follow = fields.Text(string='Steps to follow',required=True)
+ 
+    expected_behavior = fields.Char('Expected Behavior' , required=True)
+    current_behavior = fields.Char(string='Current Behavior',required=True)
+    users_names = fields.Char(string='Users Names', required=True)
+    related_record_name = fields.Char(string='Related Record Name', required=True)
+    Attachments = fields.Char(string='Attachments', required=True)
+    error_message = fields.Char(string='Error Message') 
+    other_info = fields.Char(string='Other Info')
     @api.model
     def create(self,vals):
         res = super(HelpDeskTicket,self).create(vals)
